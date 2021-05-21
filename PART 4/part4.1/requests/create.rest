@@ -1,0 +1,6 @@
+POST http://localhost:3003/api/blogs 
+content-type: application/json 
+
+{
+"title": "suneethabulla", "author": "ramakrishnaundavalli", "url": "gmail.com", "likes": 100
+}
