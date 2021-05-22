@@ -1,0 +1,26 @@
+describe('Blog app', function() {
+  beforeEach(function() {
+    cy.request('POST', 'http://localhost:3001/api/testing/reset')
+    cy.visit('http://localhost:3000')
+    
+    const user = {
+      name: 'Zoro',
+      username: 'Zoro',
+      password: 'sword'
+    }
+    cy.request('POST', 'http://localhost:3001/api/users/', user)
+
+  })
+
+  it('Login form is shown', function() {
+		// ...
+		cy.request('POST', 'http://localhost:3001/api/testing/reset')
+    const user = {
+      name: 'Zoro',
+      username: 'Zoro',
+      password: 'sword'
+    }
+    cy.request('POST', 'http://localhost:3001/api/users/', user)
+		
+  })
+})

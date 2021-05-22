@@ -1,0 +1,25 @@
+Cypress.Commands.add('createBlog', ( title, author, url, likes ) => {
+  cy.request({
+    url: 'http://localhost:3001/api/blogs',
+    method: 'POST',
+    body: { 
+      "title":title,
+      "author":author,
+       "url": url,
+       "likes":likes
+     },
+    headers: {
+      'Authorization': `bearer ${JSON.parse(localStorage.getItem('loggedBlogappUser')).token}`
+    }
+  })
+  cy.visit('http://localhost:3000')
+})
+
+// test
+    it('order by like', function() {
+
+			cy.createBlog('title1','author1', 'www.url.com', 2)
+			cy.createBlog('first','author1', 'www.url.com', 1)
+			cy.createBlog('title2','author1', 'www.url.com', 7)
+
+		})
