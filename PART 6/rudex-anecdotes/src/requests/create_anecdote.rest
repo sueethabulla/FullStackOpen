@@ -1,0 +1,8 @@
+
+POST http://localhost:3001/anecdotes
+content-type: application/json
+
+{
+  "content": "Suneetha Bulla",
+  "value": 10
+}
